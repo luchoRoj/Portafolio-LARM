@@ -1,0 +1,830 @@
+/*Importar dos familias de fuentes desde Google Fonts:Righteous y work sans de grosor 100,300,400,600 y 800 */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+*{  /*
+    box-sizing: border-box; /* Cambio modelo de caja para facilitar la gestióm de tamaños de los elementos */
+    font-family: 'Work Sans'; /* Definición de la fuente para todos los elementos de la página */
+    margin: 0; /* Elimina el margen predeterminado de todos los elementos */
+    padding: 0; /* Elimina el relleno predeterminado de todos los elementos */
+}
+html{
+    /* Permite deslizar al hacer clic en los links del menu */
+    scroll-behavior: smooth;
+}
+/* MENU */
+
+/* Definir el nivel de apilamiento del contenedor y en este caso estara por encima de los otros elementos */
+.contenedor-header{
+    background: #1d2327;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+/* configura un header dentro de un contenedor con la clase .contenedor-header alineándolos al centro verticalmente y aplicando un relleno interior */
+.contenedor-header header{
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+/* Estiliza la clase .logo en un header dentro de un contenedor con la clase .contenedor-header, utilizando una fuente específica, un tamaño de fuente grande, un color distintivo y sin subrayado. */
+.contenedor-header header .logo a{
+    font-family: 'Righteous';
+    font-size: 36px;
+    color: #1CB698;
+    text-decoration: none;
+}
+/* configura una lista desordenada (<ul>) dentro de un header en un contenedor con la clase .contenedor-header para que sus elementos secundarios se dispongan en una fila utilizando flexbox y aparezcan sin los estilos de lista predeterminados */
+.contenedor-header header ul{
+    display: flex;
+    list-style: none;
+}
+/* estiliza los enlaces dentro de una lista de navegación para que el texto sea de un color gris azulado, esté centrado dentro del enlace, se disponga horizontalmente con márgenes, tenga un poco de espacio interno (padding), y no tenga subrayado. */
+.contenedor-header header nav ul li a{
+    text-align: center;
+    color: #54656d;
+    margin: 0 15px;
+    padding: 3px;
+    transition: .5s;
+    text-decoration: none;
+}
+/* Cambio a un color muy oscuro cuando el usuario pasa el cursor sobre el enlace. /*
+.contenedor-header header nav ul li a:hover{
+    color: #040606;
+}
+/* */
+.nav-responsive{
+    background-color: #1CB698;
+    color:#fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+/* Media query para mostrar el botón en pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-responsive {
+        display: block;
+    }
+    
+    .contenedor-header header ul {
+        display: none;
+    }
+}
+/* SECCION I N I C I O */
+/* Contenedor con la clase .inicio que tiene un fondo compuesto por un degradado lineal y una imagen. El texto dentro del contenedor se muestra en color blanco para que sea visible sobre el fondo oscuro. */
+.inicio{
+    background: linear-gradient(to top, rgba(49, 58, 62, 0.8), rgba(30,35,38,1)),
+    url(img/fondo.jpg);
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+/* Estiliza el título principal para que sea grande y tenga un estilo de fuente personalizado */
+.inicio .contenido-banner{
+    padding: 20px;
+    background-color: #1e2326;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    border-radius: 40px;
+}
+/* La imagen dentro del contenedor .contenido-banner se mostrará como un rombo con un margen superior de 40 píxeles, un borde esquinero sólido de 10 píxeles de color verde oscuro y un ancho del 85% del contenedor. */
+.inicio .contenido-banner img {
+    margin-top: 40px;
+    border: 10px solid #0a3f35;
+    display: block;
+    width: 85%;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+/* los elementos <h1> dentro del contenedor .contenido-banner se mostrarán con un margen superior de 30 píxeles, un tamaño de fuente de 32 píxeles y utilizando la fuente 'Righteous'. */
+.inicio .contenido-banner h1{
+    margin-top: 30px;
+    font-size: 32px;
+    font-family: 'Righteous';
+}
+/* los elementos <p> dentro del contenedor .contenido-banner se mostrarán con un margen */
+.inicio .contenido-banner h2{
+    font-size: 15px;
+    font-weight: normal;
+}
+/* los enlaces dentro del contenedor .redes se muestren como círculos con un borde y un color de fondo específicos, y que tengan un tamaño y una alineación consistentes. */
+.inicio .contenido-banner .redes a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #210606;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+/* Al pasar el cursor sobre los enlaces dentro del contenedor .redes en .contenido-banner, el fondo de los enlaces cambiará al color de púrpura definido */
+.inicio .contenido-banner .redes a:hover{
+    background-color: #640282;
+}
+/* Estiliza el botón de inicio de sesión */
+.sobremi{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
+/* El contenido dentro de .contenido-seccion dentro del elemento .sobremi se mostrará centrado horizontalmente en la página y no se extenderá más allá de 1100 píxeles de ancho.  */
+.sobremi .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+/* Los elementos <h2> dentro del elemento .sobremi se mostrarán con un tamaño de fuente grande y centrados horizontalmente en la página. El texto estará en la fuente 'Righteous' y tendrá un espacio adicional en la parte superior e inferior para mejorar su legibilidad y presentación. */
+.sobremi h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+/* Los párrafos dentro del elemento .contenido-seccion dentro del elemento .sobremi tendrán un tamaño de fuente de 18 píxeles, una altura de línea de 22 píxeles y un margen inferior de 20 píxeles. */
+.sobremi .contenido-seccion p{
+    font: 18px;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+/* Cualquier texto contenido dentro de los elementos <span> dentro de los párrafos dentro de .contenido-seccion dentro del elemento .sobremi será de color verde (#1CB698) y en negrita. */
+.sobremi .contenido-seccion p span{
+    color: #1CB698;
+    font-weight: bold;
+}
+/* Aprovechar las capacidades de flexbox para el diseño y la distribución del espacio dentro de su contenedor. */
+.sobremi .fila{
+    display: flex;
+}
+/* Crear diseños con distribución de espacios de dos columnas dentro de una fila en una página web.*/
+.sobremi .fila .col
+{
+    width: 50%;
+}
+/* Los títulos de nivel 3 (<h3>) dentro de los elementos con la clase .col dentro de los elementos con la clase .fila dentro del elemento .sobremi se mostrarán con un tamaño de fuente de 28 píxeles, utilizando la fuente 'Righteous', y tendrán un margen inferior de 25 píxeles.  */
+.sobremi .fila .col h3{
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
+}
+/* Cualquier lista no ordenada (<ul>) dentro de los elementos con la clase .col dentro de los elementos con la clase .fila dentro del elemento .sobremi no mostrará marcadores de viñetas */
+.sobremi .fila .col ul{
+    list-style: none;
+}
+/* Los elementos de lista (<li>) dentro de las listas no ordenadas (<ul>) dentro de los elementos con la clase .col dentro de los elementos con la clase .fila dentro del elemento .sobremi tendrán un margen de 12 píxeles en la parte superior e inferior */
+.sobremi .fila .col ul li{
+    margin: 12px 0;
+}
+/* Los enlaces (<a>) dentro de los elementos de lista (<li>) dentro de las list se mostrarán como elementos en línea con color de texto verde.
+.sobremi .fila .col ul li strong{
+    display: inline-block;
+    color: #1CB698;
+    width: 130px;
+}
+/* los elementos <span> dentro de los elementos de lista dentro de las listas no ordenadas dentro de los elementos con la clase .col dentro de los elementos con la clase .fila dentro del elemento .sobremi se mostrarán con un fondo verde, texto en negrita, un relleno interno y esquinas redondeadas. */
+.sobremi .fila .col ul li span{
+    background-color: #1CB698;
+    padding: 3px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+/* El contenedor con la clase .contenedor-intereses dentro de los elementos con las clases .col, .fila, y .sobremi se mostrará como un contenedor flexible con envoltura automática. */
+.sobremi .fila .col .contenedor-intereses{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Los elementos con la clase .interes dentro del contenedor .contenedor-intereses se mostrarán como cuadrados de 100x100 píxeles con un fondo gris oscuro y esquinas redondeadas. */
+.sobremi .fila .col .contenedor-intereses .interes{
+    width: 100px;
+    height: 100px;
+    background-color: #252A2E;
+    border-radius: 10px;
+    margin: 0 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+/* Cuando el cursor del mouse está sobre un elemento con la clase .interes dentro del contenedor .contenedor-intereses dentro de los elementos .col, .fila, y .sobremi, el color de fondo del elemento cambiará a verde */
+.sobremi .fila .col .contenedor-intereses .interes:hover{
+    background-color: #1CB698;
+}
+/* los elementos <i> dentro de los elementos con la clase .interes dentro del contenedor .contenedor-intereses dentro de los elementos .col, .fila, y .sobremi tendrán un tamaño de fuente de 30 píxeles y un margen inferior de 10 píxeles. */
+.sobremi .fila .col .contenedor-intereses .interes i{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+/* los botones dentro de los elementos con la clase .sobremi tendrán un aspecto visual coherente, con bordes blancos, texto blanco sobre fondo transparente, y un estilo centrado y fácilmente identificable como elementos interactivos. */
+.sobremi button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+/* El elemento .overlay dentro de los botones dentro de los elementos con la clase .sobremi se posicionará absolutamente en la esquina superior izquierda del botón, con un ancho inicial de 0.  */
+.sobremi button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #1CB698;
+    z-index: -1;
+    transition: 1s;
+}
+/* El botón de descarga se verá con un fondo verde (#1CB698), texto blanco, borde verde y esquinas redondeadas. */
+.boton-descarga {
+    display: inline-block;
+    background-color: #1CB698;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid #1CB698;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  /* Cuando el cursor del mouse está sobre el botón de descarga, el color de fondo del botón cambiará a blanco y el color del texto cambiará a verde. */
+  .boton-descarga:hover {
+    background-color: #fff;
+    color: #1CB698;
+  }
+/* SECCION S K I L L S */
+/* Se crea un área con fondo oscuro para el contenido relacionado con habilidades, con texto blanco para una buena legibilidad y un relleno generoso para separar el contenido del borde del elemento. */
+.skills{
+    background-color: #252A2E;
+    color: #ffffff;
+    padding: 50px 20px;
+}
+/* Asegurar que el contenido dentro del elemento .skills .contenido-seccion tenga un ancho máximo de 1100 píxeles y esté centrado horizontalmente dentro de su contenedor principal. */
+.skills .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+/*  Los elementos <h2> dentro del elemento con la clase .skills tendrán un tamaño de fuente grande, centrados horizontalmente y tendrán un espacio de relleno en la parte superior e inferior*/
+.skills h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+/* Los elementos con la clase .fila dentro de un elemento con la clase .skills utilizarán el modelo de diseño flexible de CSS */
+.skills .fila{
+    display: flex;
+}
+/* Las columnas dentro de las filas en la sección de habilidades ocuparán cada una el 50% del ancho disponible y tendrán un relleno de 20 píxeles en los lados izquierdo y derecho para separarlas visualmente. */
+.skills .fila .col{
+    width: 50%;
+    padding: 0 20px;
+}
+/* Los elementos <h3> dentro de las columnas dentro de las filas en la sección de habilidades tendrán un tamaño de fuente de 28 píxeles, fuente "Righteous" y margen inferior de 25 píxeles.. */
+.skills .fila .col h3{
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
+}
+/* Los elementos <span> que son descendientes directos de elementos con la clase .skill dentro de los elementos con la clase .skills tendrán un peso de fuente en negrita, se mostrarán como bloques y tendrán un margen inferior de 10 píxeles. */
+.skills .skill > span{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+/* Las barras de habilidades tendrán una altura de 8 píxeles, un ancho del 80% del contenedor, un color de fondo gris oscuro y estarán posicionadas relativamente en su contenedor. */ 
+.skills .skill .barra-skill{
+    height: 8px;
+    width: 80%;
+    background-color: #131517;
+    position: relative;
+    margin-bottom: 30px;
+}
+/* Barra de progreso (.progreso) diseñada para mostrar visualmente el nivel de habilidad en una determinada área. En conjunto, estas propiedades aseguran que la barra de progreso se vea como una barra coloreada. El ancho de la barra puede variar para mostrar diferentes niveles de progreso, típicamente ajustado dinámicamente. /*
+.skills .skill .progreso{
+    background-color: #1c90b6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8px;
+}
+/* Se estiliza un <span> que actúa como un indicador en forma de círculo que muestra el porcentaje de progreso. Este círculo se posiciona al final de la barra de progreso (.barra-skill).  */
+.skills .skill .barra-skill span{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #1CB698;
+    border-radius: 50px;
+    line-height: 40px;
+    text-align: center;
+    top: -17px;
+    right: -15px;
+    font-size: 14px;
+}
+/* Muestra cómo la barra de progreso se llena para representar el nivel de habilidad  */
+.skills .skill .javascript{
+    width: 0%;
+    animation: 2s javascript forwards;
+}
+/* Al aplicar esta animación a la barra de progreso, esta se llenaría gradualmente desde el 0% hasta el progreso fijado durante la duración de la animación. */
+@keyframes javascript {
+    0%{width: 0%;}
+    100%{width: 75%;}
+}
+/* Gradualización de la barra de progreso. Durante 2 segundos, la barra de progreso se anima gradualmente desde el 0% de ancho hasta el 80% de ancho. Al final se mantiene en el progreso definido. */
+.skills .skill .htmlcss{
+    width: 0%;
+    animation: 2s htmlcss forwards;
+}
+/* la animación "htmlcss" describe el cambio en el ancho de un elemento, que probablemente represente una barra de progreso para las habilidades relacionadas con HTML y CSS. La animación comienza con un ancho del 0% y termina con un ancho del 89%. */
+@keyframes htmlcss {
+    0%{width: 0%;}
+    100%{width: 89%;}
+}
+/* Muestra cómo la barra de progreso se llena para representar el nivel de habilidad  */
+.skills .skill .photoshop{
+    width: 0%;
+    animation: 2s photoshop forwards;
+}
+/* la animación "htmlcss" describe el cambio en el ancho de un elemento, que probablemente represente una barra de progreso para las habilidades relacionadas con HTML y CSS. La animación comienza con un ancho del 0% y termina con un ancho del 89%. */
+@keyframes photoshop {
+    0%{width: 0%;}
+    100%{width: 85%;}
+}
+
+.skills .skill .java{
+    width: 0%;
+    animation: 2s java forwards;
+}
+@keyframes Java {
+    0%{width: 0%;}
+    100%{width: 80%;}
+}
+
+.skills .skill .python{
+    width: 0%;
+    animation: 2s Python forwards;
+}
+@keyframes python {
+    0%{width: 0%;}
+    100%{width: 80%;}
+}
+
+.skills .skill .comunicacion{
+    width: 0%;
+    animation: 2s comunicacion forwards;
+}
+@keyframes comunicacion {
+    0%{width: 0%;}
+    100%{width: 80%;}
+}
+
+.skills .skill .trabajo{
+    width: 0%;
+    animation: 2s trabajo forwards;
+}
+@keyframes trabajo {
+    0%{width: 0%;}
+    100%{width: 70%;}
+}
+
+.skills .skill .creatividad{
+    width: 0%;
+    animation: 2s creatividad forwards;
+}
+@keyframes creatividad {
+    0%{width: 0%;}
+    100%{width: 80%;}
+}
+
+.skills .skill .dedicacion{
+    width: 0%;
+    animation: 2s dedicacion forwards;
+}
+@keyframes dedicacion {
+    0%{width: 0%;}
+    100%{width: 65%;}
+}
+
+.skills .skill .proyect{
+    width: 0%;
+    animation: 2s proyect forwards;
+}
+@keyframes proyect {
+    0%{width: 0%;}
+    100%{width: 94%;}
+}
+/* SECCION CURRICULUM */
+/* Estilo a aplicar a un contenedor que contiene contenido relacionado con el currículum vitae. El fondo gris oscuro con texto blanco proporciona un alto contraste que puede mejorar la legibilidad. */
+.curriculum{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
+/* control del diseño y la presentación del contenido dentro de las secciones del currículum. Al limitar el ancho máximo del contenido y centrarlo horizontalmente */
+.curriculum .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+/* Estilo a aplicar a los encabezados de nivel 2 dentro del contenedor del currículum. Los encabezados de nivel 2 serán relativamente grandes (48 píxeles) para captar la atención del lector. Fuente 'Righteous' y alinear el texto de los encabezados de nivel 2 al centro dentro de su contenedor. */
+.curriculum h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+/* Garantizar que los elementos secundarios se distribuyan uniformemente a lo largo del contenedor, con un espacio igual entre cada uno y en los extremos.  */
+.curriculum .fila{
+    display: flex;
+    justify-content: space-between;
+}
+/* controlar el diseño y la presentación de las columnas dentro del currículum. Al especificar el ancho de las columnas y agregar relleno a su contenido, se garantiza que las columnas estén bien espaciadas */
+.curriculum .fila .col{
+    width: 49%;
+    padding: 0 20px;
+}
+/* Controlar la apariencia y el diseño de los encabezados de nivel 3 dentro del currículum. */
+.curriculum .fila .col h3{
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
+}
+/* Estilo para para agregar un borde derecho a un elemento específico dentro del diseño del currículum, identificado por la clase izquierda. A */
+.curriculum .fila .izquierda{
+    border-right: 2px solid #252A2E;
+}
+/* Agregar un borde izquierdo a un elemento específico dentro del diseño del currículum, identificado por la clase derecha.  */
+.curriculum .fila .derecha{
+    border-left: 2px solid #252A2E;
+}
+/* Dar estilo y formato a los ítems dentro de la fila de un currículum. Relleno interno de 25 píxeles. Margen inferior de 30 píxeles para espacio entre los ítems. Color de fondo oscuro y posición relativa para la disposición de los elementos hijos dentro del ítem. */
+.curriculum .fila .item{
+    padding: 25px;
+    margin-bottom: 30px;
+    background-color: #252A2E;
+    position: relative;
+}
+/* Establecer el tamaño de la fuente y el margen inferior de los encabezados de nivel 4 */
+.curriculum .fila .item h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+/*  Uso de un color distintivo, un tamaño de fuente grande, y negrita, junto con el comportamiento de bloque. */
+.curriculum .fila .item .casa{
+    color: #1CB698;
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+}
+/* El elemento se comporte como un bloque y la fecha se presente claramente en su propia línea, separada de otros contenidos y de color distintivo (#1CB698). Un margen inferior para organización del contenido. */
+.curriculum .fila .item .fecha{
+    display: block;
+    color: #1CB698;
+    margin-bottom: 10px;
+}
+/* Altura de línea constante de 24 píxeles puede mejorar la legibilidad.*/
+.curriculum .fila .item p{
+    line-height: 24px;
+}
+/* Borde derecho de 2 píxeles de color #1CB698 crea una separación visual. Un margen derecho de 20 píxeles asegura que haya un espacio adecuado entre el elemento izq y otros elementos a su derecha*/
+.curriculum .fila .izq{
+    border-right: 2px solid #1CB698;
+    margin-right: 20px;
+}
+/* Un borde izquierdo de 2 píxeles de color #1CB698 crea una separación visual. El margen izquierdo de 20 píxeles asegura que haya un espacio adecuado. */
+.curriculum .fila .der{
+    border-left: 2px solid #1CB698;
+    margin-left: 20px;
+}
+/* Añadir una línea horizontal conectiva entre elementos en un currículum, proporcionando una separación clara y una continuidad visual en el diseño.*/
+.curriculum .fila .item .conectori{
+    height: 2px;
+    background-color: #1CB698;
+    width: 47px;
+    position: absolute;
+    top: 50%;
+    right: -47px;
+    z-index: 5;
+}
+/* Estilizar un pequeño círculo que actúa como un punto de conexión al final de una línea en un diseño de currículum */
+.curriculum .fila .item .conectori .circuloi{
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #1CB698;
+    float: right;
+    position: relative;
+    bottom: 4px;
+}
+/* Añadir una línea horizontal conectiva entre elementos en un currículum */
+.curriculum .fila .item .conectord{
+    height: 2px;
+    background-color: #1CB698;
+    width: 47px;
+    position: absolute;
+    top: 50%;
+    left: -47px;
+    z-index: 5;
+}
+/* Estilizar un pequeño círculo que actúa como un punto de conexión al inicio de una línea en un diseño de currículum */
+.curriculum .fila .item .conectord .circulod{
+    display: block;
+    height: 12px;
+    width: 12px;
+    border-radius: 60%;
+    background-color: #1c6cb6;
+    float: left;
+    position: relative;
+    bottom: 4px;
+}
+/* SECCION PORTFOLIO */
+/* Color de fondo oscuro (#252A2E), color blanco (#fff) del texto y el relleno (padding) proporciona espacio interno alrededor del contenido dentro del portafolio */
+.portfolio{
+    background-color: #252A2E;
+    color: #fff;
+    padding: 50px 20px;
+}
+/* Ancho máximo para Limitar el ancho del contenido no más allá de 1100 píxeles y el uso de "margin: auto" para centrar horizontalmente dentro del contenedor principal, independientemente del tamaño de la pantalla del dispositivo.*/
+.portfolio .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+/* Los títulos tendrán tamaño grande de fuente (48px), fuente 'Righteous', se centran horizontalmente dentro de su contenedor y se les agrega un relleno en la parte superior e inferior*/
+.portfolio h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+/* Se estiliza un modelo de caja flexible, para que los elementos de la galería se ajusten y cambien de tamaño automáticamente según el tamaño del contenedor y el contenido. Con "flex-wrap: wrap" la galería sera adaptable y se ajustará a diferentes tamaños de pantalla. Con "justify-content: space-around" se distribuye uniformemente el espacio disponible alrededor de los elementos de la galería. */
+.portfolio .galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/* En su orden, dan estilo de posicionamiento relativo, ancho máximo, altura adaptable, margen y cursor de puntero que dan un diseño atractico y coherente ´para los lementos individuales de la galería de proyectos dentro de la sección de portafolio. */
+.portfolio .galeria .proyecto{
+    position: relative;
+    max-width: 340px;
+    height: fit-content;
+    margin: 10px;
+    cursor: pointer;
+}
+/* Las imágenes dentro de la galería de proyectos en la sección de portafolio se muestran correctamente y se ajustan al diseño del sitio web de manera adecuada */
+.portfolio .galeria .proyecto img{
+    width: 100%;
+    display: block;
+}
+/* Se combinan estas reglas para crear un overlay que cubre completamente los elementos de proyecto en la galería, con un degradado de color de fondo, contenido centrado tanto horizontal como verticalmente, y una transición suave cuando se produce un cambio en su estado. */
+.portfolio .galeria .proyecto .overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(rgba(35, 234, 194, 0.778), rgba(28,182,152,.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0;
+}
+/* controlaR el espaciado inferior y la transición de los elementos de encabezado <h3> dentro del overlay de los proyectos en la galería de la sección de portafolio. El margen inferior proporciona un espacio visual entre el encabezado y el contenido siguiente, mientras que la transición suave agrega un efecto visual agradable ante el cambio de estilos de los enbezados*/
+.portfolio .galeria .proyecto .overlay h3{
+    margin-bottom: 20px;
+    transition: 1s;
+}
+/* Cuando el mouse pasa sobre el overlay, la regla CSS hace que el overlay sea completamente visible estableciendo su opacidad en 1. Esto crea un efecto visual en el que el contenido del overlay se muestra claramente cuando el usuario interactúa con él. */
+.portfolio .galeria .proyecto .overlay:hover{
+    opacity: 1;
+}
+/* Cuando el mouse pasa sobre los encabezados dentro del overlay, la regla CSS elimina el espacio inferior entre los encabezados y el contenido que les sigue. */
+.portfolio .galeria .proyecto .overlay:hover h3{
+    margin-bottom: 0px;
+}
+/* SECCION CONTACTO */
+/* En su orden: Imagen(ruta) de fondo para el elemento con la clase "contacto", color de fondo del elemento "contacto" en un tono oscuro de gris azulado, color del texto dentro del elemento "contacto" como blanco y relleno de 50 píxeles en la parte superior e inferior del elemento "contacto", y no hay relleno horizontal (0). Esto crea un espacio alrededor del contenido dentro del elemento. */
+.contacto{
+    background-image: url(img/contact_bg.png);
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 0;
+}
+/* El contenido dentro del elemento "contenido-seccion" dentro del elemento "contacto" tenga un ancho máximo de 1100 píxeles y esté centrado horizontalmente en la página. */
+.contacto .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+/* Estilizar los encabezados <h2> dentro del elemento "contacto", especificando su tamaño de fuente, familia de fuentes, alineación de texto y relleno. */
+.contacto h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+/* Convertir los elementos con la clase "fila" dentro del elemento "contacto" en contenedores flexibles, lo que permite un mayor control sobre la disposición y el diseño de sus elementos secundarios mediante Flexbox. */
+.contacto .fila{
+    display: flex;
+}
+/* Establecer su ancho, relleno y método de posicionamiento. Esto contribuye a la creación de un diseño de columnas flexible */
+.contacto .col{
+    width: 50%;
+    padding: 10px;
+    position: relative;
+}
+/* Personalizar la apariencia y el diseño de los campos de entrada <input> y las áreas de texto <textarea> dentro del área de contacto, asegurando que sean visibles y accesibles */
+.contacto .col input, .contacto .col textarea{
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: #252A2E;
+    color: #fff;
+    font-size: 18px;
+}
+/* Personalizar el estilo y el diseño del botón dentro del área de contacto, asegurando que sea visualmente atractivo, interactivo y fácil de usar */
+.contacto button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+/* Definir un elemento de superposición que se colocará encima del botón, inicialmente oculto (con un ancho de 0), pero que se expandirá horizontalmente (hasta el ancho completo del botón) con un color de fondo verde cuando se active (posiblemente mediante alguna interacción del usuario).  */
+.contacto button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #1CB698;
+    z-index: -1;
+    transition: 1s;
+}
+/* Cuando el usuario pasa el cursor sobre el botón, expandirá el elemento de superposición horizontalmente, cubriendo así todo el botón. */
+.contacto button:hover .overlay{
+    width: 100%;
+}
+/* Ajustar las imágenes dentro del elemneto con la clase "col", automáticamente al ancho de su contenedor, lo que puede ser útil para asegurar que las imágenes sean responsivas y se vean bien en diferentes tamaños de pantalla. */
+.contacto .col img{
+    width: 100%;
+}
+/* Colocar los elementos "info" en el centro de sus contenedores "col" en el área de contacto, con un fondo de color gris oscuro y espacio de relleno adicional alrededor del contenido. */
+.contacto .col .info{
+    position: absolute;
+    top: 40%;
+    background-color: #252A2E;
+    padding: 20px;
+    max-width: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Eliminar cualquier viñeta o numeración al aplicar esta regla a las listas desordenadas dentro de los elementos con la clase "info" */
+.contacto .col .info ul{
+    list-style: none;
+}
+/* Crear un espacio vertical uniforme entre cada elemento de lista dentro de las listas desordenadas dentro de los elementos con la clase "info" */
+.contacto .col .info ul li{
+    margin-bottom: 20px;
+}
+/* Cambiar el color, comportamiento de visualización y agregando espacio entre ellos y otros elementos en la lista estilizando los iconos dentro de los elementos de lista en las listas desordenadas dentro de los elementos con la clase "info" en el área de contacto*/
+.contacto .col .info ul li i{
+    color: #3d1cb6;
+    display: inline-block;
+    margin-right: 20px;
+}
+/* Definir el aspecto y el diseño del elemento <footer> de la página web, incluyendo el color de fondo, el color del texto, el relleno, la alineación del texto y el ancho del elemento. */
+footer{
+    background-color: #252A2E;
+    color: #fff;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+/* Agregar un espacio vertical entre los elementos con la clase "redes" y otros elementos dentro del pie de página. */
+footer .redes{
+    margin-bottom: 20px;
+}
+/* Estilizar los enlaces que representan iconos de redes sociales dentro del pie de página, dándoles una apariencia circular, un color de borde y un tamaño específicos, así como un margen entre ellos. */
+footer .redes a{
+    color: #993f3f;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid hsl(230, 91%, 38%);
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;  
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+/* Estilizar un botón de "arriba" en el pie de página, dándole una apariencia circular, un color de fondo y un tamaño específicos, así como también lo posiciona en la esquina superior derecha del pie de página y lo centra horizontalmente. */
+footer .arriba{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #1CB698;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 18px;
+}
+/* SECCION RESPONSIVE */
+/* Ajustar el diseño de la navegación cuando la pantalla tiene un ancho máximo de 980 píxeles, ocultando la navegación principal y mostrando una versión alternativa de navegación designada para dispositivos más pequeños. */
+@media screen and (max-width:980px){
+    nav{
+        display: none;
+    }
+    .nav-responsive{
+        display: block;
+    }
+    nav.responsive{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        background-color: #252A2E;
+        width: 180px;
+    }
+    nav.responsive ul{
+        display: block !important;
+    }
+    nav.responsive ul li{
+        border-bottom: 1px solid #fff;
+        padding: 10px 0;
+    }
+}
+/* Utilizar consultas de medios (@media) para aplicar estilos específicos cuando la pantalla tiene un ancho máximo de 700 píxeles. Esto se usa comúnmente para crear diseños receptivos que se adapten a dispositivos más pequeños, como teléfonos móviles. */
+@media screen and (max-width:700px){
+    .sobremi .fila{
+        display: block;
+    }
+    .sobremi .fila .col{
+        width: fit-content;
+    }
+
+    .skills .fila{
+        display: block;
+    }
+    .skills .fila .col{
+        width: 100%;
+    }
+    .skills .fila .col .barra-skill{
+        width: 100%;
+    }
+
+    .curriculum .fila{
+        display: block;
+    }
+    .curriculum .fila .col{
+        width: 90%;
+    }
+    .curriculum .fila .derecha{
+        margin-left: 20px;
+    }
+
+    .portfolio .galeria{
+        display: block;
+        width: 100%;
+    }
+    .portfolio .galeria .proyecto{
+        max-width: 100%;
+    }
+    .portfolio .galeria .proyecto img{
+        width: 100%;
+    }
+    .contacto .fila{
+        display: block;
+    }
+    .contacto .fila .col{
+        width: 100%;
+    }
+}
